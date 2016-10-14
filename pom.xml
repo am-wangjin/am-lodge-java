@@ -6,8 +6,5 @@
   <groupId>am.lodge</groupId>
   <artifactId>am-lodge</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>am-lodge-sso</module>
-  </modules>
   <packaging>pom</packaging>
 </project>
