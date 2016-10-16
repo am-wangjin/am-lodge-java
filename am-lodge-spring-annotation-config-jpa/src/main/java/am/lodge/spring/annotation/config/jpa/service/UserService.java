@@ -6,6 +6,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import java.util.List;
 
 /**
  * Created by am on 16-10-15.
@@ -23,5 +28,12 @@ public class UserService{
 
   public User findById(String id){
     return entityManager.find(User.class, id);
+  }
+
+  public List<User> findAll(){
+    CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+    CriteriaQuery<User> cq = cb.createQuery(User.class);
+    cq.from(User.class);
+    return entityManager.createQuery(cq).getResultList();
   }
 }
