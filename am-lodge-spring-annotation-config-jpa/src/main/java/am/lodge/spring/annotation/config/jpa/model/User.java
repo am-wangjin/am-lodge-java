@@ -2,7 +2,10 @@ package am.lodge.spring.annotation.config.jpa.model;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
@@ -17,7 +20,7 @@ public class User implements Serializable{
 
   private String password;
 
-  private Integer stateus;
+  private Integer status;
 
   @Id
   @GeneratedValue(generator = "id-generator")
@@ -31,6 +34,7 @@ public class User implements Serializable{
     this.id = id;
   }
 
+  @Column(nullable = false, length = 512)
   public String getName(){
     return name;
   }
@@ -48,11 +52,12 @@ public class User implements Serializable{
     this.password = password;
   }
 
-  public Integer getStateus(){
-    return stateus;
+  @Column(nullable = false)
+  public Integer getStatus(){
+    return status;
   }
 
-  public void setStateus(Integer stateus){
-    this.stateus = stateus;
+  public void setStatus(Integer status){
+    this.status = status;
   }
 }

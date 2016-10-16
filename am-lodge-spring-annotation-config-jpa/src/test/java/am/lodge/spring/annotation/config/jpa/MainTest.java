@@ -26,9 +26,9 @@ public class MainTest{
     User user = new User();
     user.setName("刘备");
     user.setPassword("123");
-    user.setStateus(1);
+    user.setStatus(1);
     userService.save(user);
-    id = user.getId();
+    id = user.getId().toString();
     System.out.println("save成功");
     System.out.println("id=" + id);
   }
@@ -40,7 +40,7 @@ public class MainTest{
     System.out.println("id=" + user.getId());
     System.out.println("name=" + user.getName());
     System.out.println("password=" + user.getPassword());
-    System.out.println("states=" + user.getStateus());
+    System.out.println("status=" + user.getStatus());
   }
 
   @Test
