@@ -1,6 +1,7 @@
 package am.lodge.spring.annotation.config.jpa.model;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,7 +35,7 @@ public class User implements Serializable{
     this.id = id;
   }
 
-  @Column(nullable = false, length = 512)
+  @Column(nullable = false, length = 200)
   public String getName(){
     return name;
   }
