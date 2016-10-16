@@ -1,4 +1,4 @@
-package am.lodge.spring.annotation.config.jpa;
+package am.lodge.spring.annotation.config.jpa.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

@@ -32,8 +32,7 @@ public class UserService{
   }
 
   public List<User> findAll(){
-    CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-    CriteriaQuery<User> cq = cb.createQuery(User.class);
+    CriteriaQuery<User> cq = entityManager.getCriteriaBuilder().createQuery(User.class);
     cq.from(User.class);
     return entityManager.createQuery(cq).getResultList();
   }

@@ -1,20 +1,14 @@
-package am.lodge.spring.annotation.config.jpa;
+package am.lodge.spring.annotation.config.jpa.test;
 
 import am.lodge.spring.annotation.config.jpa.model.User;
 import am.lodge.spring.annotation.config.jpa.service.UserService;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 /**
- * Created by am on 16-10-15.
+ * Created by am on 16-10-16.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=AppConfig.class, loader=AnnotationConfigContextLoader.class)
-public class MainTest{
+public class UserTest extends AbstractTestCase{
 
   @Autowired
   private UserService userService;
