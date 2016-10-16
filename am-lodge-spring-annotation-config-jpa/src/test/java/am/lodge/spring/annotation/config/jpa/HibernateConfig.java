@@ -35,6 +35,9 @@ public class HibernateConfig{
   @Value("${packagesToScan}")
   private String packagesToScan;
 
+  @Value("${hbm2ddl}")
+  private String hbm2ddl;
+
   @Bean
   public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
     LocalContainerEntityManagerFactoryBean entityManagerFactory = new LocalContainerEntityManagerFactoryBean();
@@ -42,6 +45,7 @@ public class HibernateConfig{
     entityManagerFactory.setDataSource(dataSource);
     Properties jpaProperties = new Properties();
     jpaProperties.setProperty("hibernate.dialect", dialect);
+    jpaProperties.setProperty("hibernate.hbm2ddl.auto", hbm2ddl);
     entityManagerFactory.setJpaProperties(jpaProperties);
     HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
     jpaVendorAdapter.setGenerateDdl(true);
@@ -63,5 +67,4 @@ public class HibernateConfig{
     txManager.setEntityManagerFactory(entityManagerFactory().getObject());
     return txManager;
   }
-
 }
