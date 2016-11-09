@@ -20,6 +20,7 @@
   <modules>
     <module>am-lodge-sso-springmvc</module>
     <module>am-lodge-spring-annotation-config-jpa</module>
+    <module>am-lodge-sso-springmvc</module>
   </modules>
 
   <build>
