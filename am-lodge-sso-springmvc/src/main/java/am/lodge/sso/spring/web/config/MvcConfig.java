@@ -26,8 +26,7 @@ public class MvcConfig extends WebMvcConfigurationSupport{
 
   @Override
   public void addCorsMappings(CorsRegistry registry){
-    registry.addMapping("/**")
-            .allowedOrigins("*");
+    registry.addMapping("/**");
   }
 
   //json数据返回
