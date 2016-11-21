@@ -24,6 +24,7 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 @ComponentScan(basePackages = "am.lodge.sso.spring.web.controller", includeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = {Controller.class})})
 public class MvcConfig extends WebMvcConfigurationSupport{
 
+  //开启跨域请求支持
   @Override
   public void addCorsMappings(CorsRegistry registry){
     registry.addMapping("/**");
