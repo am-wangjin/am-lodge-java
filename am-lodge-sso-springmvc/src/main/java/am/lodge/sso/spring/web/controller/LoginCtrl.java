@@ -15,11 +15,6 @@ import java.util.Map;
 @RequestMapping("login")
 public class LoginCtrl{
 
-  @RequestMapping("/index")
-  public String index(Model model){
-    return "index";
-  }
-
   @RequestMapping()
   @ResponseBody
   public Map<String, String> login(){

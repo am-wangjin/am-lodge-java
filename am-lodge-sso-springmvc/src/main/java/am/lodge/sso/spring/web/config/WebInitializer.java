@@ -1,7 +1,6 @@
 package am.lodge.sso.spring.web.config;
 
 import org.springframework.core.annotation.Order;
-import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

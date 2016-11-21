@@ -10,11 +10,11 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.HandlerAdapter;
 import org.springframework.web.servlet.HandlerExceptionResolver;
-import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.handler.SimpleServletHandlerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
  * Created by am on 16-11-13.
@@ -22,23 +22,15 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "am.lodge.sso.spring.web.controller", includeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = {Controller.class})})
-public class MvcConfig{
+public class MvcConfig extends WebMvcConfigurationSupport{
 
-  @Bean
-  public ViewResolver resourceViewResolver(){
-    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-    viewResolver.setPrefix("/WEB-INF/views/jsp/");
-    viewResolver.setSuffix(".jsp");
-    viewResolver.setOrder(0);
-    return viewResolver;
+  @Override
+  public void addCorsMappings(CorsRegistry registry){
+    registry.addMapping("/**")
+            .allowedOrigins("*");
   }
 
-//  @Bean
-//  public HandlerMapping handlerMapping(){
-//    RequestMappingHandlerMapping result = new RequestMappingHandlerMapping();
-//    return result;
-//  }
-
+  //json数据返回
   @Bean
   public HandlerAdapter handlerAdapter(){
     RequestMappingHandlerAdapter result = new RequestMappingHandlerAdapter();
@@ -47,14 +39,16 @@ public class MvcConfig{
     return result;
   }
 
+  //统一异常处理
   @Bean
   public HandlerExceptionResolver handlerExceptionResolver(){
     HandlerExceptionResolver result = new GlobalHandlerExceptionResolver();
     return result;
   }
 
-  @Bean
-  public HandlerAdapter servletHandlerAdapter(){
-    return new SimpleServletHandlerAdapter();
+  //设置默认servlet处理
+  @Override
+  public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer){
+    configurer.enable();
   }
 }
