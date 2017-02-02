@@ -2,6 +2,7 @@ package am.lodge.spring.mvc.test.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -23,10 +24,9 @@ public class FoodCtl{
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-  @ResponseBody
-  public Map<String, Object> findOne(@PathVariable("id") Long id){
+  public void findOne(@PathVariable("id") Long id, Model model){
     System.out.println(id);
-    return new HashMap();
+    model.addAttribute("food", new HashMap());
   }
 
   @RequestMapping(method = RequestMethod.POST)
