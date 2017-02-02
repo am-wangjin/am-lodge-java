@@ -20,7 +20,6 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
  * Created by am on 16-11-13.
  */
 @Configuration
-@EnableWebMvc
 @ComponentScan(basePackages = "am.lodge.sso.spring.web.controller", includeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = {Controller.class})})
 public class MvcConfig extends WebMvcConfigurationSupport{
 
