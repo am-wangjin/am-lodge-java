@@ -2,6 +2,7 @@ package am.lodge.spring.mvc.test;
 
 import am.lodge.spring.mvc.test.config.ApplicationConfig;
 import am.lodge.spring.mvc.test.config.MvcConfig;
+import am.lodge.spring.mvc.test.model.Food;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +22,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 /**
  * Created by am on 17-1-26.
+ * http://jinnianshilongnian.iteye.com/blog/2004660
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
@@ -45,6 +47,8 @@ public class WebMvcTest{
     MvcResult result = mockMvc.perform(get("/foods/1.json"))
             .andDo(MockMvcResultHandlers.print())
             .andReturn();
-    Assert.assertNotNull(result.getModelAndView().getModel().get("food"));
+    Food food = (Food)result.getModelAndView().getModel().get("food");
+    Assert.assertEquals("1", food.getId());
+    Assert.assertEquals("面包", food.getName());
   }
 }

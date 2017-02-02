@@ -1,5 +1,6 @@
 package am.lodge.spring.mvc.test.controller;
 
+import am.lodge.spring.mvc.test.model.Food;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,9 +25,11 @@ public class FoodCtl{
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-  public void findOne(@PathVariable("id") Long id, Model model){
-    System.out.println(id);
-    model.addAttribute("food", new HashMap());
+  public void findOne(@PathVariable("id") String id, Model model){
+    Food food = new Food();
+    food.setId(id);
+    food.setName("面包");
+    model.addAttribute("food", food);
   }
 
   @RequestMapping(method = RequestMethod.POST)
