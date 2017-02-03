@@ -9,7 +9,9 @@ public class ResponseResult implements Serializable{
 
   public final static String STATE_ERROR = "-1";
 
-  private String state;
+  public final static String SUCCESS = "1";
+
+  private String state = SUCCESS;
 
   private Object data;
 
