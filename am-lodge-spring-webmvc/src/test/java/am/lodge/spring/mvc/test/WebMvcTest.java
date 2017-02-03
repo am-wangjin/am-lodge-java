@@ -1,7 +1,7 @@
 package am.lodge.spring.mvc.test;
 
 import am.lodge.spring.mvc.test.config.ApplicationConfig;
-import am.lodge.spring.mvc.test.config.MvcConfig;
+import am.lodge.spring.mvc.test.config.MvcConfigTest;
 import am.lodge.spring.mvc.test.model.Food;
 import org.junit.Assert;
 import org.junit.Before;
@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @WebAppConfiguration
 @ContextHierarchy({
         @ContextConfiguration(name = "parent", classes = {ApplicationConfig.class}),
-        @ContextConfiguration(name = "child", classes = {MvcConfig.class})
+        @ContextConfiguration(name = "child", classes = {MvcConfigTest.class})
 })
 public class WebMvcTest{
 
