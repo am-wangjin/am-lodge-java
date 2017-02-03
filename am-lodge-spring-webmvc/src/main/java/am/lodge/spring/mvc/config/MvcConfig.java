@@ -1,5 +1,6 @@
 package am.lodge.spring.mvc.config;
 
+import am.lodge.spring.mvc.view.MappingJacksonJsonView;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanInitializationException;
@@ -17,7 +18,6 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
-import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 import javax.servlet.ServletContext;
 
@@ -71,10 +71,11 @@ public class MvcConfig implements ApplicationContextAware, ServletContextAware{
     ContentNegotiatingViewResolver viewResolver = new ContentNegotiatingViewResolver();
     viewResolver.setContentNegotiationManager(this.mvcContentNegotiationManager());
     viewResolver.setOrder(1);
-    MappingJackson2JsonView view = new MappingJackson2JsonView();
+    MappingJacksonJsonView view = new MappingJacksonJsonView();
     view.setServletContext(this.servletContext);
     view.setApplicationContext(this.applicationContext);
     viewResolver.setDefaultViews(list(view));
+    viewResolver.setOrder(1);
     return viewResolver;
   }
 

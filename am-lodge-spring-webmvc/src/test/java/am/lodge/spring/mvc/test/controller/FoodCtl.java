@@ -29,7 +29,7 @@ public class FoodCtl{
     Food food = new Food();
     food.setId(id);
     food.setName("面包");
-    model.addAttribute("food", food);
+    model.addAttribute(food);
   }
 
   @RequestMapping(method = RequestMethod.POST)
