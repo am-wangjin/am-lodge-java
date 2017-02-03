@@ -1,5 +1,6 @@
 package am.lodge.spring.mvc.test.config;
 
+import am.lodge.spring.mvc.config.MvcConfig;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;

@@ -1,4 +1,4 @@
-package am.lodge.spring.mvc.test.config;
+package am.lodge.spring.mvc.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.BeansException;
@@ -13,17 +13,13 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.accept.ContentNegotiationManagerFactoryBean;
 import org.springframework.web.context.ServletContextAware;
-import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 import javax.servlet.ServletContext;
-import java.util.ArrayList;
-import java.util.List;
 
 import static am.lodge.commons.util.CollectionUtils.list;
 
@@ -31,7 +27,6 @@ import static am.lodge.commons.util.CollectionUtils.list;
  * Created by am on 16-11-13.
  */
 @Configuration
-@EnableWebMvc
 public class MvcConfig implements ApplicationContextAware, ServletContextAware{
   private ApplicationContext applicationContext;
   private ServletContext servletContext;
