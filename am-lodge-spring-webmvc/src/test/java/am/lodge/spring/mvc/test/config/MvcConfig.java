@@ -15,6 +15,7 @@ import org.springframework.web.accept.ContentNegotiationManagerFactoryBean;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
@@ -24,10 +25,13 @@ import javax.servlet.ServletContext;
 import java.util.ArrayList;
 import java.util.List;
 
+import static am.lodge.commons.util.CollectionUtils.list;
+
 /**
  * Created by am on 16-11-13.
  */
 @Configuration
+@EnableWebMvc
 public class MvcConfig implements ApplicationContextAware, ServletContextAware{
   private ApplicationContext applicationContext;
   private ServletContext servletContext;
@@ -75,9 +79,7 @@ public class MvcConfig implements ApplicationContextAware, ServletContextAware{
     MappingJackson2JsonView view = new MappingJackson2JsonView();
     view.setServletContext(this.servletContext);
     view.setApplicationContext(this.applicationContext);
-    List<View> views = new ArrayList();
-    views.add(view);
-    viewResolver.setDefaultViews(views);
+    viewResolver.setDefaultViews(list(view));
     return viewResolver;
   }
 

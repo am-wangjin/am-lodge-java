@@ -12,6 +12,11 @@
 
 	<dependencies>
 		<dependency>
+			<groupId>am.lodge</groupId>
+			<artifactId>am-lodge-commons</artifactId>
+			<version>${am-lodge.varsion}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
