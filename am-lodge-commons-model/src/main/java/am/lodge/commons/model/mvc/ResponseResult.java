@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by am on 16-11-20.
  */
-public class ResultModel implements Serializable{
+public class ResponseResult implements Serializable{
 
   public final static String STATE_ERROR = "-1";
 

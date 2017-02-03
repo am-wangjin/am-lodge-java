@@ -1,6 +1,6 @@
 package am.lodge.sso.spring.web.exception;
 
-import am.lodge.commons.model.mvc.ResultModel;
+import am.lodge.commons.model.mvc.ResponseResult;
 import am.lodge.commons.servlet.ServletUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,9 +23,9 @@ public class GlobalHandlerExceptionResolver extends AbstractHandlerExceptionReso
   protected ModelAndView doResolveException(HttpServletRequest request, HttpServletResponse response, Object o, Exception e){
     logger.info("GlobalHandlerExceptionResolver:捕获异常");
     logger.error(e.getMessage(), e);
-    ResultModel model = new ResultModel();
+    ResponseResult model = new ResponseResult();
     model.setData(e.getMessage());
-    model.setState(ResultModel.STATE_ERROR);
+    model.setState(ResponseResult.STATE_ERROR);
     ObjectMapper om = new ObjectMapper();
     try{
       ServletUtils.writeResponse(response, om.writeValueAsString(model));
