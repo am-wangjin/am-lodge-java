@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,9 +18,17 @@ import java.util.Map;
 public class FoodCtl{
 
   @RequestMapping(method = RequestMethod.GET)
-  @ResponseBody
-  public List<Map<String, Object>> findAll(){
-    return new ArrayList();
+  public void findAll(Model model){
+    List result = new ArrayList();
+    Food food = new Food();
+    food.setId("1");
+    food.setName("面包");
+    result.add(food);
+    food = new Food();
+    food.setId("2");
+    food.setName("米饭");
+    result.add(food);
+    model.addAttribute(result);
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
