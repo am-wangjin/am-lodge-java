@@ -44,14 +44,12 @@ public class FoodCtl{
     food.setId("1");
   }
 
-  @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-  public void update(@PathVariable("id") Long id, @RequestBody Map<String, Object> food){
-    System.out.println(id);
-    System.out.println(food);
+  @RequestMapping(method = RequestMethod.PUT)
+  public void update(Food food){
+    food.setName("米饭");
   }
 
-  @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-  public void delete(@PathVariable("id") Long id){
-    System.out.println(id);
+  @RequestMapping(method = RequestMethod.DELETE)
+  public void delete(String[] ids){
   }
 }

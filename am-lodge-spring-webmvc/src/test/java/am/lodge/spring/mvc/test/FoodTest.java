@@ -6,9 +6,7 @@ import org.junit.Test;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 /**
  * Created by am on 17-1-26.
@@ -42,6 +40,22 @@ public class FoodTest extends AbstractTest{
     getMockMvc().perform(post("/foods.json").param("name", "面包"))
         .andDo(MockMvcResultHandlers.print())
         .andDo(mvcResult -> Assert.assertEquals(content, mvcResult.getResponse().getContentAsString()))
+        .andReturn();
+  }
+
+  @Test
+  public void update() throws Exception{
+    String content = "{\"state\":\"1\",\"data\":{\"id\":\"1\",\"name\":\"米饭\"}}";
+    getMockMvc().perform(put("/foods.json").param("id", "1").param("name", "面包"))
+        .andDo(MockMvcResultHandlers.print())
+        .andDo(mvcResult -> Assert.assertEquals(content, mvcResult.getResponse().getContentAsString()))
+        .andReturn();
+  }
+
+  @Test
+  public void _delete() throws Exception{
+    getMockMvc().perform(delete("/foods.json").param("id", "1").param("id", "2"))
+        .andDo(MockMvcResultHandlers.print())
         .andReturn();
   }
 }
