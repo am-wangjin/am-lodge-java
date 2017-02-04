@@ -15,9 +15,11 @@ import org.springframework.web.accept.ContentNegotiationManager;
 import org.springframework.web.accept.ContentNegotiationManagerFactoryBean;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import javax.servlet.ServletContext;
 
@@ -67,7 +69,7 @@ public class MvcConfig implements ApplicationContextAware, ServletContextAware{
   }
 
   @Bean
-  public ViewResolver viewResolver(){
+  public ViewResolver jsonViewResolver(){
     ContentNegotiatingViewResolver viewResolver = new ContentNegotiatingViewResolver();
     viewResolver.setContentNegotiationManager(this.mvcContentNegotiationManager());
     viewResolver.setOrder(1);
@@ -76,6 +78,15 @@ public class MvcConfig implements ApplicationContextAware, ServletContextAware{
     view.setApplicationContext(this.applicationContext);
     viewResolver.setDefaultViews(list(view));
     viewResolver.setOrder(1);
+    return viewResolver;
+  }
+
+  @Bean
+  public ViewResolver urlViewResolver(){
+    InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+    viewResolver.setApplicationContext(this.applicationContext);
+    viewResolver.setServletContext(this.servletContext);
+    viewResolver.setOrder(2);
     return viewResolver;
   }
 

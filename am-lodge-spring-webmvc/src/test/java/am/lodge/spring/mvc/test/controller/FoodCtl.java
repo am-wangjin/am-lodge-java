@@ -40,22 +40,17 @@ public class FoodCtl{
   }
 
   @RequestMapping(method = RequestMethod.POST)
-  @ResponseStatus(HttpStatus.CREATED)
-  @ResponseBody
-  public Long create(@RequestBody Map<String, Object> food){
-    System.out.println(food);
-    return new Long(1);
+  public void create(Food food){
+    food.setId("1");
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-  @ResponseStatus(HttpStatus.OK)
   public void update(@PathVariable("id") Long id, @RequestBody Map<String, Object> food){
     System.out.println(id);
     System.out.println(food);
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-  @ResponseStatus(HttpStatus.OK)
   public void delete(@PathVariable("id") Long id){
     System.out.println(id);
   }

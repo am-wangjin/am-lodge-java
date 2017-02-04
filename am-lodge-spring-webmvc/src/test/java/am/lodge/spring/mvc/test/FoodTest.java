@@ -4,8 +4,10 @@ import am.lodge.spring.mvc.test.model.Food;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
@@ -17,21 +19,29 @@ public class FoodTest extends AbstractTest{
   @Test
   public void findAll() throws Exception{
     String content = "{\"state\":\"1\",\"data\":[{\"id\":\"1\",\"name\":\"面包\"},{\"id\":\"2\",\"name\":\"米饭\"}]}";
-    MvcResult result = getMockMvc().perform(get("/foods.json"))
-        .andExpect(status().isOk())
+    getMockMvc().perform(get("/foods.json"))
+        .andDo(MockMvcResultHandlers.print())
         .andDo(mvcResult -> Assert.assertEquals(content, mvcResult.getResponse().getContentAsString()))
         .andReturn();
-    result.getModelAndView().getModel().get("food");
   }
 
   @Test
   public void findOne() throws Exception{
     String content = "{\"state\":\"1\",\"data\":{\"id\":\"1\",\"name\":\"面包\"}}";
     MvcResult result = getMockMvc().perform(get("/foods/1.json"))
-        .andExpect(status().isOk())
+        .andDo(MockMvcResultHandlers.print())
         .andDo(mvcResult -> Assert.assertEquals(content, mvcResult.getResponse().getContentAsString()))
         .andReturn();
     Food food = (Food) result.getModelAndView().getModel().get("food");
     Assert.assertNotNull(food);
+  }
+
+  @Test
+  public void create() throws Exception{
+    String content = "{\"state\":\"1\",\"data\":{\"id\":\"1\",\"name\":\"面包\"}}";
+    getMockMvc().perform(post("/foods.json").param("name", "面包"))
+        .andDo(MockMvcResultHandlers.print())
+        .andDo(mvcResult -> Assert.assertEquals(content, mvcResult.getResponse().getContentAsString()))
+        .andReturn();
   }
 }
