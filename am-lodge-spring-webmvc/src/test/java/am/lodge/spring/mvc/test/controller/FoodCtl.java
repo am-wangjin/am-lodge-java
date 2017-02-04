@@ -50,6 +50,7 @@ public class FoodCtl{
   }
 
   @RequestMapping(method = RequestMethod.DELETE)
-  public void delete(String[] ids){
+  public void delete(@RequestParam("ids") String[] ids, Model model){
+    model.addAttribute(ids);
   }
 }

@@ -54,8 +54,10 @@ public class FoodTest extends AbstractTest{
 
   @Test
   public void _delete() throws Exception{
-    getMockMvc().perform(delete("/foods.json").param("id", "1").param("id", "2"))
+    String content = "{\"state\":\"1\",\"data\":[\"1\",\"2\"]}";
+    getMockMvc().perform(delete("/foods.json").param("ids", "1").param("ids", "2"))
         .andDo(MockMvcResultHandlers.print())
+        .andDo(mvcResult -> Assert.assertEquals(content, mvcResult.getResponse().getContentAsString()))
         .andReturn();
   }
 }
