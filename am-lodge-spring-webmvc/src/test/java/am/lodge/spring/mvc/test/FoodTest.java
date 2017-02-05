@@ -54,6 +54,15 @@ public class FoodTest extends AbstractTest{
   }
 
   @Test
+  public void creates() throws Exception{
+    String content = "{\"state\":\"1\",\"data\":[{\"id\":\"1\",\"name\":\"面包\"},{\"id\":\"2\",\"name\":\"米饭\"}]}";
+    getMockMvc().perform(post("/foods/creates.json").contentType(MediaType.APPLICATION_JSON).content("[{\"name\":\"面包\"},{\"name\":\"米饭\"}]"))
+            .andDo(MockMvcResultHandlers.print())
+            .andDo(mvcResult -> Assert.assertEquals(content, mvcResult.getResponse().getContentAsString()))
+            .andReturn();
+  }
+
+  @Test
   public void update() throws Exception{
     String content = "{\"state\":\"1\",\"data\":{\"id\":\"1\",\"name\":\"米饭\"}}";
     getMockMvc().perform(put("/foods.json").param("id", "1").param("name", "面包"))

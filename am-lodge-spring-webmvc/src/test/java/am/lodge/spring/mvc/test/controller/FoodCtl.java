@@ -44,6 +44,16 @@ public class FoodCtl{
     food.setId("1");
   }
 
+  @RequestMapping(value = "/creates", method = RequestMethod.POST)
+  public void creates(@RequestBody List<Food> foods, Model model){
+    int i = 1;
+    for (Food food : foods){
+      food.setId(String.valueOf(i));
+      i++;
+    }
+    model.addAttribute(foods);
+  }
+
   @RequestMapping(method = RequestMethod.PUT)
   public void update(Food food){
     food.setName("米饭");
