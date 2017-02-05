@@ -39,7 +39,6 @@ public class MvcConfig implements ApplicationContextAware, ServletContextAware{
     if(this.contentNegotiationManager == null){
       ContentNegotiationManagerFactoryBean factory = new ContentNegotiationManagerFactoryBean();
       factory.setServletContext(this.servletContext);
-      factory.setIgnoreAcceptHeader(true);
       factory.addMediaType("json", MediaType.APPLICATION_JSON);
       try{
         factory.afterPropertiesSet();

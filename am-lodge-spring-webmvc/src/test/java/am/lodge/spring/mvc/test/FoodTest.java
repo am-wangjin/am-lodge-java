@@ -3,6 +3,7 @@ package am.lodge.spring.mvc.test;
 import am.lodge.spring.mvc.test.model.Food;
 import org.junit.Assert;
 import org.junit.Test;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
@@ -13,6 +14,15 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
  * http://jinnianshilongnian.iteye.com/blog/2004660
  */
 public class FoodTest extends AbstractTest{
+
+  @Test
+  public void findAllForAcceptHeader() throws Exception{
+    String content = "{\"state\":\"1\",\"data\":[{\"id\":\"1\",\"name\":\"面包\"},{\"id\":\"2\",\"name\":\"米饭\"}]}";
+    getMockMvc().perform(get("/foods").accept(MediaType.APPLICATION_JSON))
+            .andDo(MockMvcResultHandlers.print())
+            .andDo(mvcResult -> Assert.assertEquals(content, mvcResult.getResponse().getContentAsString()))
+            .andReturn();
+  }
 
   @Test
   public void findAll() throws Exception{
