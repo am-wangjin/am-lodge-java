@@ -11,15 +11,19 @@ public class MappingJacksonJsonView extends MappingJackson2JsonView{
   @Override
   protected Object filterModel(Map<String, Object> model){
     ResponseResult result = new ResponseResult();
-    Object date = super.filterModel(model);
-    if(date instanceof Map && !CollectionUtils.isEmpty((Map)date)){
-      Map map = (Map)date;
+    Object data = super.filterModel(model);
+    if(data instanceof Map && !CollectionUtils.isEmpty((Map)data)){
+      Map map = (Map)data;
       if(map.size() == 1){
-        result.setData(map.values().iterator().next());
+        data = map.values().iterator().next();
+        if(data instanceof ResponseResult){
+          return data;
+        }
+        result.setData(data);
         return result;
       }
     }
-    result.setData(date);
+    result.setData(data);
     return result;
   }
 }

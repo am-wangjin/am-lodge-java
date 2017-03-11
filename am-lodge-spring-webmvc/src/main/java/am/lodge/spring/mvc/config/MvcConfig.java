@@ -1,12 +1,16 @@
 package am.lodge.spring.mvc.config;
 
+import am.lodge.spring.mvc.servlet.handler.HandlerMethodExceptionResolver;
 import am.lodge.spring.mvc.view.MappingJacksonJsonView;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.ContentNegotiatingViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+import java.util.List;
 
 import static am.lodge.commons.util.CollectionUtils.list;
 
@@ -34,5 +38,10 @@ public class MvcConfig extends WebMvcConfigurationSupport{
     irvResolver.setOrder(2);
     viewResolver.setViewResolvers(list(irvResolver));
     return viewResolver;
+  }
+
+  @Override
+  protected void configureHandlerExceptionResolvers(List<HandlerExceptionResolver> exceptionResolvers) {
+    exceptionResolvers.add(new HandlerMethodExceptionResolver());
   }
 }
