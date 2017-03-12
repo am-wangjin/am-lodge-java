@@ -13,7 +13,7 @@ public class ResponseResult implements Serializable{
 
   private String state = SUCCESS;
 
-  private String msg;
+  private String msg = "";
 
   private Object data;
 
