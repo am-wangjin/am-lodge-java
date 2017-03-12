@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by am on 16-11-13.
  */
-public class BaseMvcConfig extends WebMvcConfigurationSupport{
+public class BaseMvcConfig extends WebMvcConfigurationSupport {
 
   @Override
   protected void configureViewResolvers(ViewResolverRegistry registry) {
