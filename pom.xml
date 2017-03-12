@@ -23,6 +23,7 @@
   <modules>
     <module>am-lodge-commons</module>
     <module>am-lodge-commons-model</module>
+    <module>am-lodge-persistence</module>
     <module>am-lodge-spring-webmvc</module>
     <module>am-lodge-demo</module>
   </modules>
