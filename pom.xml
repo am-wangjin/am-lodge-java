@@ -21,11 +21,10 @@
   </properties>
 
   <modules>
-    <module>am-lodge-spring-annotation-config-jpa</module>
-    <module>am-lodge-sso-springmvc</module>
-	  <module>am-lodge-commons</module>
+    <module>am-lodge-commons</module>
     <module>am-lodge-commons-model</module>
     <module>am-lodge-spring-webmvc</module>
+    <module>am-lodge-demo</module>
   </modules>
 
   <build>
