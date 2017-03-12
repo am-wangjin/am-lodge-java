@@ -25,6 +25,8 @@ public class BaseMvcConfig extends WebMvcConfigurationSupport {
     InternalResourceViewResolver jspResolver = new InternalResourceViewResolver();
     jspResolver.setApplicationContext(this.getApplicationContext());
     jspResolver.setServletContext(this.getServletContext());
+    jspResolver.setPrefix("/WEB-INF/views/");
+    jspResolver.setSuffix(".jsp");
     jspResolver.setOrder(1);
     registry.viewResolver(jspResolver);
   }
