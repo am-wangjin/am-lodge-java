@@ -1,4 +1,4 @@
-package am.lodge.spring.annotation.config.jpa.config;
+package am.lodge.persistence.test.config;
 
 import org.h2.jdbcx.JdbcConnectionPool;
 import org.springframework.beans.factory.annotation.Value;

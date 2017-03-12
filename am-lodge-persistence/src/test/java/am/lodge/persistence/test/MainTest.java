@@ -1,4 +1,4 @@
-package am.lodge.spring.annotation.config.jpa.test;
+package am.lodge.persistence.test;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

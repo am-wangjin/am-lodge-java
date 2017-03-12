@@ -1,6 +1,6 @@
-package am.lodge.spring.annotation.config.jpa.service;
+package am.lodge.persistence.test.jpa.service;
 
-import am.lodge.spring.annotation.config.jpa.model.User;
+import am.lodge.persistence.test.jpa.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

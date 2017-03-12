@@ -1,7 +1,7 @@
-package am.lodge.spring.annotation.config.jpa.test;
+package am.lodge.persistence.test;
 
-import am.lodge.spring.annotation.config.jpa.model.User;
-import am.lodge.spring.annotation.config.jpa.service.UserService;
+import am.lodge.persistence.test.jpa.model.User;
+import am.lodge.persistence.test.jpa.service.UserService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

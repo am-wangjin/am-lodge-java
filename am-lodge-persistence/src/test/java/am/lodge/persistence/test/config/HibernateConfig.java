@@ -1,4 +1,4 @@
-package am.lodge.spring.annotation.config.jpa.config;
+package am.lodge.persistence.test.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,8 +1,7 @@
-package am.lodge.spring.annotation.config.jpa.inheritance.service;
+package am.lodge.persistence.test.jpa.inheritance.service;
 
-import am.lodge.spring.annotation.config.jpa.inheritance.model.Garment;
-import am.lodge.spring.annotation.config.jpa.inheritance.model.Goods;
-import am.lodge.spring.annotation.config.jpa.inheritance.model.Shoe;
+import am.lodge.persistence.test.jpa.inheritance.model.Garment;
+import am.lodge.persistence.test.jpa.inheritance.model.Shoe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

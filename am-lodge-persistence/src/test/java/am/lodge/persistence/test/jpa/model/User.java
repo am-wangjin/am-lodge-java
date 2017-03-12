@@ -1,4 +1,4 @@
-package am.lodge.spring.annotation.config.jpa.model;
+package am.lodge.persistence.test.jpa.model;
 
 import org.hibernate.annotations.GenericGenerator;
 

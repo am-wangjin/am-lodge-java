@@ -1,13 +1,14 @@
-package am.lodge.spring.annotation.config.jpa.test;
+package am.lodge.persistence.test;
 
-import am.lodge.spring.annotation.config.jpa.inheritance.model.Garment;
-import am.lodge.spring.annotation.config.jpa.inheritance.model.Goods;
-import am.lodge.spring.annotation.config.jpa.inheritance.model.Shoe;
-import am.lodge.spring.annotation.config.jpa.inheritance.service.GoodsService;
+import am.lodge.persistence.test.jpa.inheritance.model.Garment;
+import am.lodge.persistence.test.jpa.inheritance.model.Goods;
+import am.lodge.persistence.test.jpa.inheritance.model.Shoe;
+import am.lodge.persistence.test.jpa.inheritance.service.GoodsService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+
 
 /**
  * Created by am on 16-10-16.
