@@ -15,9 +15,9 @@ public class LoginController{
   @Autowired
   private LoginService loginService;
 
-  @RequestMapping()
+  @RequestMapping("/index")
   public String index(){
-    return "";
+    return "login/index";
   }
 
   @RequestMapping()
