@@ -79,4 +79,11 @@ public class FoodTest extends AbstractTest{
         .andDo(mvcResult -> Assert.assertEquals(content, mvcResult.getResponse().getContentAsString()))
         .andReturn();
   }
+
+  @Test
+  public void exception() throws Exception{
+    MvcResult result = getMockMvc().perform(get("/foods/exception.json"))
+        .andDo(MockMvcResultHandlers.print())
+        .andReturn();
+  }
 }

@@ -63,4 +63,12 @@ public class FoodCtl{
   public void delete(@RequestParam("ids") String[] ids, Model model){
     model.addAttribute(ids);
   }
+
+  @RequestMapping(value = "/exception", method = RequestMethod.GET)
+  public void exception(){
+    String msg = "出错了";
+    if(1 == 1){
+      throw new RuntimeException(msg);
+    }
+  }
 }
