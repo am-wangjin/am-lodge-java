@@ -1,10 +1,9 @@
 package am.lodge.spring.mvc.test.config;
 
-import am.lodge.spring.mvc.config.MvcConfig;
+import am.lodge.spring.mvc.config.BaseMvcConfig;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
-import org.springframework.context.annotation.Import;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -14,6 +13,5 @@ import org.springframework.stereotype.Controller;
 @ComponentScan(basePackages = "am.lodge.spring.mvc.test.controller",
     useDefaultFilters = false,
     includeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, value = {Controller.class})})
-@Import(MvcConfig.class)
-public class MvcConfigTest{
+public class MvcConfigTest extends BaseMvcConfig{
 }

@@ -3,7 +3,6 @@ package am.lodge.spring.mvc.config;
 import am.lodge.spring.mvc.servlet.handler.HandlerMethodExceptionResolver;
 import am.lodge.spring.mvc.view.MappingJacksonJsonView;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
@@ -17,8 +16,7 @@ import static am.lodge.commons.util.CollectionUtils.list;
 /**
  * Created by am on 16-11-13.
  */
-@Configuration
-public class MvcConfig extends WebMvcConfigurationSupport{
+public class BaseMvcConfig extends WebMvcConfigurationSupport{
 
   @Bean
   @Override
