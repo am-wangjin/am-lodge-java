@@ -9,7 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>am-lodge-spring-annotation-config-jpa</artifactId>
+  <artifactId>am-lodge-spring-persistence</artifactId>
 
   <dependencies>
     <dependency>
