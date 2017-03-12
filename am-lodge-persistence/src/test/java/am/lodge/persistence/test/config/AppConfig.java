@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * Created by am on 16-10-15.
  */
 @Configuration
-@Import(HibernateConfig.class)
+@Import({HibernateConfig.class, DataSourceConfig.class})
 @ComponentScan(basePackages = {"am.lodge"}, excludeFilters = {
     @ComponentScan.Filter(type = FilterType.ANNOTATION, value = Controller.class)})
 @EnableTransactionManagement
