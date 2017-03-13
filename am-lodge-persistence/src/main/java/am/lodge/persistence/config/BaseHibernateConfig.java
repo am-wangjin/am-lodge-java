@@ -27,8 +27,11 @@ public class BaseHibernateConfig {
   @Value("${packagesToScan}")
   private String packagesToScan;
 
-  @Value("${hbm2ddl}")
+  @Value("${hbm2ddl: none}")
   private String hbm2ddl;
+
+  @Value("${showSql: true}")
+  private String showSql;
 
   @Bean
   public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
@@ -41,7 +44,7 @@ public class BaseHibernateConfig {
     entityManagerFactory.setJpaProperties(jpaProperties);
     HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
     jpaVendorAdapter.setGenerateDdl(true);
-    jpaVendorAdapter.setShowSql(true);
+    jpaVendorAdapter.setShowSql(Boolean.valueOf(showSql));
     entityManagerFactory.setJpaVendorAdapter(jpaVendorAdapter);
     return entityManagerFactory;
   }
