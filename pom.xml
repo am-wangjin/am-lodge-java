@@ -26,7 +26,9 @@
     <module>am-lodge-persistence</module>
     <module>am-lodge-spring-webmvc</module>
     <module>am-lodge-demo</module>
-      <module>am-lodge-json</module>
+    <module>am-lodge-json</module>
+    <module>am-lodge-sso</module>
+    <module>am-lodge-sso</module>
   </modules>
 
   <build>
