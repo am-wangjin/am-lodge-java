@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>am.lodge</groupId>
@@ -16,7 +16,7 @@
     <hibernate-entitymanager.version>5.2.3.Final</hibernate-entitymanager.version>
     <h2.version>1.4.192</h2.version>
     <junit.version>4.12</junit.version>
-    <jackson.version>2.8.6</jackson.version>
+    <jackson.version>2.8.7</jackson.version>
     <servlet.verson>3.1.0</servlet.verson>
   </properties>
 
@@ -26,6 +26,7 @@
     <module>am-lodge-persistence</module>
     <module>am-lodge-spring-webmvc</module>
     <module>am-lodge-demo</module>
+      <module>am-lodge-json</module>
   </modules>
 
   <build>
