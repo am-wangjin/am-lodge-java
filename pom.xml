@@ -10,7 +10,13 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
     <am-lodge.varsion>1.0-SNAPSHOT</am-lodge.varsion>
+    <source-jdk.version>1.8</source-jdk.version>
+    <compiler-jdk.version>1.8</compiler-jdk.version>
+    <maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+    <commons.lang.version>3.6</commons.lang.version>
+    <guava.version>21.0</guava.version>
     <spring.version>4.3.7.RELEASE</spring.version>
     <spring-session.version>1.2.2.RELEASE</spring-session.version>
     <hibernate-entitymanager.version>5.2.3.Final</hibernate-entitymanager.version>
@@ -28,7 +34,7 @@
     <module>am-lodge-demo</module>
     <module>am-lodge-json</module>
     <module>am-lodge-sso</module>
-    <module>am-lodge-sso</module>
+    <module>am-lodge-spring-webmvc</module>
   </modules>
 
   <build>
