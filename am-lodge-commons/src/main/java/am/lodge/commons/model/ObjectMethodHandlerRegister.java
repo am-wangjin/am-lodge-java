@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class ObjectMethodHandlerRegister {
 
-  private static Map<String, ObjectMethodHandler> handlers = new HashMap<String, ObjectMethodHandler>();
+  private static Map<String, ObjectMethodHandler> handlers = new HashMap<>();
 
   public static String DEFAULT_HANDLER = "DEFAULT_HANDLER";
 
