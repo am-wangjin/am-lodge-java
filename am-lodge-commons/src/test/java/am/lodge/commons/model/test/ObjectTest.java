@@ -1,5 +1,6 @@
 package am.lodge.commons.model.test;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -9,8 +10,14 @@ public class ObjectTest {
 
   @Test
   public void test1(){
-    User u1 = new User(null, null);
-    User u2 = new User(null, null);
-    System.out.println(u1.equals(u2));
+    Person u1 = new Person(null, 1);
+    Person u2 = new Person(null, 1);
+    Assert.assertTrue(u1.equals(u2));
+    u1 = new Person("abc", 1);
+    u2 = new Person("abc", 1);
+    Assert.assertTrue(u1.equals(u2));
+    u1 = new Person("abc", 1);
+    u2 = new Person("abc", 2);
+    Assert.assertTrue(!u1.equals(u2));
   }
 }

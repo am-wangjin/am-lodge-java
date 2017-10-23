@@ -8,17 +8,17 @@ import java.util.Map;
 /**
  * @author am
  */
-public class User extends AbstractObject{
+public class Person extends AbstractObject{
 
   private String name;
 
-  private String password;
+  private int age;
 
-  private Map<String, Object> attr = new HashMap<String, Object>();
+  private Map<String, Object> attr = new HashMap<>();
 
-  public User(String name, String password){
+  public Person(String name, int age){
     setName(name);
-    setPassword(password);
+    setAge(age);
   }
 
   public String getName() {
@@ -29,19 +29,19 @@ public class User extends AbstractObject{
     this.name = name;
   }
 
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
   public void setAttr(String key, Object value){
     this.attr.put(key, value);
   }
 
   public Object getAttr(String key){
     return this.attr.get(key);
+  }
+
+  public Integer getAge() {
+    return age;
+  }
+
+  public void setAge(Integer age) {
+    this.age = age;
   }
 }
