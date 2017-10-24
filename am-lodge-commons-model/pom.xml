@@ -13,9 +13,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${guava.version}</version>
+			<groupId>am.lodge</groupId>
+			<artifactId>am-lodge-commons</artifactId>
+			<version>${am-lodge.varsion}</version>
 		</dependency>
 	</dependencies>
 </project>

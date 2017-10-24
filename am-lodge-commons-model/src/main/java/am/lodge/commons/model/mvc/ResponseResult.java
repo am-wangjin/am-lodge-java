@@ -1,11 +1,11 @@
 package am.lodge.commons.model.mvc;
 
-import java.io.Serializable;
+import am.lodge.commons.model.AbstractObject;
 
 /**
  * Created by am on 16-11-20.
  */
-public class ResponseResult implements Serializable{
+public class ResponseResult extends AbstractObject {
 
   public final static String FAILURE = "0";
 
